@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+    padding: 20px;
+    font-family: sans-serif;
+    background-color: rgb(226, 226, 209);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.container img {
+    height: 150px;        /* altura fija */
+    width: auto;          /* ancho proporcional */
+    object-fit: contain;  /* evita deformaciones */
+    display: block;
+}
+
+/* Modal */
+
+/* ---------- Modal ---------- */
+.modal {
+    position: fixed;
+    inset: 0;                       /* top:0; right:0; bottom:0; left:0 */
+    background: rgba(0, 0, 0, 0.5); /* fondo negro con 50% opacidad */
+    display: none;                  /* oculto por defecto */
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Botón cerrar */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    line-height: 1;
+    user-select: none;
+    transition: transform 0.15s ease, color 0.15s ease;
+}
+.modal-close:hover {
+    color: #ff5a5a;
+    transform: scale(1.15);
+}
+
+/* Flechas prev / next */
+.modal-prev,
+.modal-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+    user-select: none;
+    border-radius: 6px;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+.modal-prev { left: 20px; }
+.modal-next { right: 20px; }
+
+.modal-prev:hover,
+.modal-next:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Cursor pointer sobre las imágenes de la galería */
+.container img {
+    cursor: pointer;
+}
