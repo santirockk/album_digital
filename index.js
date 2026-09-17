@@ -2,7 +2,7 @@ import { initModal } from './modal.js';
 
 const container = document.getElementById('container');
 
-const numeros = Array.from({ length: 16 }, (_, i) => i + 1);
+const numeros = Array.from({ length: 17 }, (_, i) => i + 1);
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
